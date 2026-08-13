@@ -22,7 +22,7 @@ export const OfflineSyncBanner: React.FC<OfflineSyncBannerProps> = ({ onReportSu
 
     checkDrafts();
 
-    const unsubscribe = subscribeNetworkStatus((online) => {
+    const unsubscribe = subscribeNetworkStatus(online: boolean) => { 
       if (!isOnline && online) {
         setConnectionRestoredToast(true);
         setTimeout(() => setConnectionRestoredToast(false), 4000);
