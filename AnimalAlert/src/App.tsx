@@ -48,7 +48,7 @@ export function App() {
   useEffect(() => {
     // Location tracking for active rescuers/volunteers
     if (currentUser && (currentUser.role === 'rescuer' || currentUser.role === 'volunteer') && currentUser.is_available) {
-      startRescuerLocationTracking(currentUser, (lat, lng) => {
+      startRescuerLocationTracking(currentUser, (lat: number, lng: number) => {
         console.log(`Updated rescuer coordinates: ${lat}, ${lng}`);
       });
     } else {
