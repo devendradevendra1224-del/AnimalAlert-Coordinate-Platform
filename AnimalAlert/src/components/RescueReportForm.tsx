@@ -38,7 +38,7 @@ export const RescueReportForm: React.FC<RescueReportFormProps> = ({
   const [showDuplicateModal, setShowDuplicateModal] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = subscribeNetworkStatus((online) => {
+    const unsubscribe = subscribeNetworkStatus(online: boolean) => {
       setIsOnline(online);
     });
     return () => unsubscribe();
